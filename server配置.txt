@@ -1,0 +1,13 @@
+node服务器配置
+
+外面的目录
+npm install express-generator -g
+express server -e
+进入server目录
+cd server
+npm i
+npm install -g  nodemon
+//监听端口
+app.listen(888,()=>{console.log('服务启动。。。')})
+启动
+在命令行 nodemon app
