@@ -64,12 +64,12 @@
             this.$message("登录失败！");
             return false;
           }
-
           /*
             insert into users(id,username,password,realname,address,idType) values(2,'user2','123','李雷2','福建龙岩','1234567');
             insert into users(id,username,password,realname,address,idType) values(3,'user3','123','李雷3','福建泉州','1234567');
             insert into users(id,username,password,realname,address,idType) values(4,'user4','123','李雷4','福建宁德','1234567');
             insert into users(id,username,password,realname,address,idType) values(5,'user5','123','李雷5','福建莆田','1234567');
+
 
 
           */

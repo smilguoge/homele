@@ -7,7 +7,25 @@ express server -e
 cd server
 npm i
 npm install -g  nodemon
-//监听端口
+//监听端口，在APP.js中添加，导出前面一行
 app.listen(888,()=>{console.log('服务启动。。。')})
 启动
 在命令行 nodemon app
+
+安装一个phpstudy,开启创建数据库
+打开到数据库安装目录下且bin目录下
+链接数据库
+mysql -u root -p;
+create database vuex;
+use vuex;
+create table users(
+id int primary key auto_increment,
+username varchar(50),
+password varchar(50),
+realname varchar(50),
+address varchar(50),
+idType varchar(50))
+环境下安装mysql
+npm install mysql
+
+在router下创建conn.js链接数据库文件
