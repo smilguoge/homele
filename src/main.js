@@ -10,6 +10,9 @@ import store from './store/user-store'
 import axios from 'axios'
 //挂载Vue原型上axios
 Vue.prototype.axios=axios
+// store.dispatch('GET_USERLIST').then(()=>{
+//   console.log(store.state.userlist)
+// })
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

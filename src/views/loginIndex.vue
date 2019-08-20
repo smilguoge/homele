@@ -1,11 +1,11 @@
 <template>
 <!-- <p>{{$store.state.userinfo}}</p> -->
 <el-container style="height: 500px; border: 1px solid #eee; ">
+
   <el-aside width="200px">
-     <h1 class="el-h1">vuex账号管理系统</h1>
     <el-menu :default-openeds="['1']"   background-color="#545c64"
   text-color="#fff" router>
-
+      <el-menu-item index="login_index" class="el-h1">vuex系统首页</el-menu-item>
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>账号管理</template>
           <el-menu-item index="userlist">账号列表</el-menu-item>
@@ -55,7 +55,9 @@
 .el-menu{border-right: 0}
 .el-aside{height: 100%;}
 .el-aside{background-color: #545c64;height: 100%;}
-.el-h1{background-color: #2f322e;color: #fff;margin: 0;padding: 1em 0;text-align: center;}
+.el-h1{background-color: #2f322e !important;color: #fff;margin: 0;padding: 1em 0;text-align: center;display: block;
+    font-size: 1.1em;line-height: 1.1;
+    font-weight: bold;}
 .el-header{background-color:#afbece;}
 .el-menu-item-group__title{padding-bottom: 0;}
 </style>

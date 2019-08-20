@@ -8,16 +8,48 @@
           <el-dropdown-item>退出系统</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span>王小虎</span>
+      <!-- <span>{{$store.state.userinfo.realname}}</span> -->
+      <span>{{username}}</span>
     </el-header>
+    <el-card class="box-card">
+  <div slot="header" class="clearfix">
+    <span>用户信息</span>
+    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+  </div>
+  <div class="text item">
+   用户名：{{username}}
+   姓名：{{realname}}
+  </div>
+</el-card>
+
+
 </el-container>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 export default {
   data:function(){
     return {}
   },
+  computed:{
+      username (){
+        return this.$store.state.userinfo.username
+      },
+      userinfo(){
+        return this.$store.state.userinfo
+      },
+      ...mapState({
+        age(state){
+          return ( state.userinfo.idType +'年龄段')
+        },
+        realname:(state)=>state.userinfo.realname
+           // 传字符串参数 'count' 等同于 `state => state.count`
+    //countAlias: 'count',
+      })
+
+  }
 
 }
 </script>
