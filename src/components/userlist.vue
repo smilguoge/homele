@@ -8,8 +8,30 @@
           <el-dropdown-item>退出系统</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <span>王小虎</span>
+      <span>{{realname}}</span>
     </el-header>
+        <el-table
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        prop="username"
+        label="用户名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="realname"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+      <el-table-column
+        prop="idType"
+        label="身份证">
+      </el-table-column>
+    </el-table>
 
 
 </el-container>
@@ -19,15 +41,21 @@
 import { mapState } from 'vuex'
   export default {
     data() {
-      return {
+      return {tableData: []
 }},
-     methods: {
-
+created(){
+this.$store.dispatch('GET_USERLIST').then(()=>{
+  //console.log(this.$store.state.userlist)
+ this.tableData=this.$store.state.userlist
+})
+},
+ computed: {
+   ...mapState({
+     realname:state=>state.userinfo.realname,
+     age:state=>state.userinfo.idType
+   })
     },
-    // computed:{
-    //   ...mapState([userlist])
 
-    // }
 
 
         }

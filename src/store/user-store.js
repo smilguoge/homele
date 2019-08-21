@@ -2,6 +2,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { resolve } from 'path';
+import { reject } from 'q';
 Vue.use(Vuex)
 //创建state
 const state={
@@ -22,10 +24,14 @@ const mutations={
 }
 const actions={
   GET_USERLIST({commit}){
-    axios.get('api/userlist').then(reponse=>{
-      commit('GET_USERLIST',reponse.data);
+    return new Promise((resolve,reject)=>{
+      axios.get('/api/userlist').then(response=>{
+        commit('GET_USERLIST',response.data);
+        resolve();
+      })
     })
   }
+
 
 }
 console.log('store.state.userlist')

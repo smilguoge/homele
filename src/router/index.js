@@ -27,7 +27,7 @@ export default new Router({
       name: 'loginIndex',
       component: loginIndex,
       children:[
-        { path: '',
+        {path: '',
         name: 'homeindex',
         component: homeindex},
         { path: '/userlist',
