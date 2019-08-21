@@ -17,8 +17,10 @@
     <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
   </div>
   <div class="text item">
-   用户名：{{username}}
-   姓名：{{realname}}
+   用户名：{{username}}<br>
+   姓名：{{userinfo.realname}}<br>
+   地址：{{address}}<br>
+   年龄：{{age}}<br>
   </div>
 </el-card>
 
@@ -41,12 +43,12 @@ export default {
         return this.$store.state.userinfo
       },
       ...mapState({
-        age(state){
-          return ( state.userinfo.idType +'年龄段')
+        address(state){
+          return state.userinfo.address
         },
-        realname:(state)=>state.userinfo.realname
-           // 传字符串参数 'count' 等同于 `state => state.count`
-    //countAlias: 'count',
+        age: 'age',
+    
+
       })
 
   }
