@@ -7,12 +7,15 @@ Vue.use(Vuex)
 const state={
   userinfo:JSON.parse(localStorage.getItem('userinfo')),
   // userlist:JSON.parse(localStorage.getItem('userlist'))
-  userlist:[]
+  userlist:[],
+  age:JSON.parse(localStorage.getItem('age')),
 }
 const mutations={
   SAVE_USERINFO(state,userinfo){
     localStorage.setItem('userinfo',JSON.stringify(userinfo));
+    localStorage.setItem('age',JSON.stringify(userinfo.idType));
     state.userinfo=userinfo;
+    state.age=userinfo.idType;
   },
   GET_USERLIST(state,userlist){
     // localStorage.setItem('userlist',JSON.stringify(userlist));
