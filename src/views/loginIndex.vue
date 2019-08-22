@@ -9,7 +9,7 @@
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>账号管理</template>
           <el-menu-item index="userlist">账号列表</el-menu-item>
-          <el-menu-item index="adduser">添加账号</el-menu-item>
+          <el-menu-item index="vipuser">vip账号</el-menu-item>
           <el-menu-item index="password">修改密码</el-menu-item>
       </el-submenu>
       <el-submenu index="2">

@@ -31,29 +31,42 @@
         prop="idType"
         label="身份证">
       </el-table-column>
+      <el-table-column
+        prop="age"
+        label="年龄">
+      </el-table-column>
     </el-table>
 
 </el-container>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState,mapActions } from 'vuex'
   export default {
     data() {
       return {tableData: []
 }},
 created(){
-this.$store.dispatch('GET_USERLIST').then(()=>{
-  //console.log(this.$store.state.userlist)
- this.tableData=this.$store.state.userlist
+// this.$store.dispatch('GET_USERLIST').then(()=>{
+//   //console.log(this.$store.state.userlist)
+//  //this.tableData=this.userlist
+//this.tableData=this.$store.state.userlist
+// })
+this.GET_USERLIST().then(()=>{
+  this.tableData=this.userlist
+
 })
 },
  computed: {
    ...mapState({
      realname:state=>state.userinfo.realname,
-     age:state=>state.userinfo.idType
+     age:state=>state.userinfo.idType,
+     userlist:state=>state.userlist
    })
     },
+  methods:{
+    ...mapActions(['GET_USERLIST'])
+  }
 
 
 

@@ -7,7 +7,7 @@ Vue.use(Router)
 const loginIndex=()=>import('../views/loginIndex.vue')
 const userlist=()=>import('../components/userlist.vue')
 const password=()=>import('../components/password.vue')
-const adduser=()=>import('../components/adduser.vue')
+const vipuser=()=>import('../components/vipuser.vue')
 const homeindex=()=>import('../components/login-home.vue')
 
 export default new Router({
@@ -36,9 +36,9 @@ export default new Router({
         { path: '/password',
         name: 'password',
         component: password},
-        { path: '/adduser',
-        name: 'adduser',
-        component: adduser}
+        { path: '/vipuser',
+        name: 'vipuser',
+        component: vipuser}
       ],
     }
   ]

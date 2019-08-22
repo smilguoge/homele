@@ -2,8 +2,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import { resolve } from 'path';
-import { reject } from 'q';
 Vue.use(Vuex)
 //创建state
 const state={
@@ -37,11 +35,15 @@ const actions={
 
 
 }
-console.log('store.state.userlist')
+const getters={
+  vipuserlist:state=>state.userlist.filter(v=>v.age>28)
+
+}
 
 //创建仓库，暴露出去
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  getters
 })

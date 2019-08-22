@@ -29,3 +29,5 @@ idType varchar(50))
 npm install mysql
 
 在router下创建conn.js链接数据库文件
+
+insert into users(id,username,password,realname,address,idType) values(7,"user6","123","李雷8","福建1宁德","1234567");
